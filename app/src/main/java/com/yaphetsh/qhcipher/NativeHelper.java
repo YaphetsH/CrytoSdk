@@ -6,6 +6,8 @@ public class NativeHelper {
         System.loadLibrary("QHCipher");
     }
     public static native String hellpCipher();
+    public static  native  byte[] aesencrypt(byte[] data,int size);
+    public static  native  byte[] aesdecrypt(byte[] data,int size);
 
 
     public static  native  byte[] encryptBuffer(byte[] data,int size);

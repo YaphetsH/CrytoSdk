@@ -28,11 +28,27 @@ public class MainActivity extends AppCompatActivity {
 
         String test_gps_str = "02681a001838d20c89e6b04c57fe1493f1269f81cc0d59ba496b";
         byte[] bytes = hexStringToByteArray(test_gps_str);
-        int size = NativeHelper.getPackSize(bytes,0);
-        Log.d("yaphetshan", size+"");
-       // byte[] test_sps_str = new byte[1395];
-       // NativeHelper.setPackInfo(test_sps_str,1395,1,3);
-        //Log.d("yaphetshan", Arrays.toString(result));
+
+        //byte[] data =  Arrays.copyOfRange(crytp,4,crytp.length);
+
+         byte[] crytp = NativeHelper.encryptBuffer(bytes,0x1a);
+        //byte[] data =  Arrays.copyOfRange(crytp,4,crytp.length);
+      //  Log.d("yaphetshan", Arrays.toString(bytes));
+
+      //  byte[] ori = NativeHelper.decryptBuffer(data,crytp.length-4);
+//        Log.d("yaphetshan", Arrays.toString(bytes));
+        Log.d("yaphetshan", Arrays.toString(bytes));
+
+        Log.d("yaphetshan", Arrays.toString(crytp));
+       // Log.d("yaphetshan", Arrays.toString(data));
+
+      //  Log.d("yaphetshan", Arrays.toString(decrypt));
+
+        // Log.d("yaphetshan", Arrays.toString(ori));
+
+      //   byte[] test_sps_str = new byte[1395];
+
+      //  Log.d("yaphetshan", NativeHelper.getPackSize(bytes,0)+"");
 
     }
     public static byte[] hexStringToByteArray(String s) {
